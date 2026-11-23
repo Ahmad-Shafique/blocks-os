@@ -1,0 +1,3 @@
+type: changed
+breaking: false
+summary: The certificate upload (CertificateUploadService) now stores the certificate with IStorageDriverService.UploadPublicObjectAsync (SeliseBlocks.StorageDriver.OS 4.3.0) instead of the Azure-only GetBlobClientAsync, so it works on an S3 or S3-compatible Default storage configuration as well as on Azure. The shared certificates container and the blob names are unchanged, so URLs already stored keep working. An SFTP Default configuration, which has no public read, is answered with the error storage -> public_objects_not_supported. Raises SeliseBlocks.StorageDriver.OS to 4.3.0 and, because that driver is built against Genesis 4.7.0, SeliseBlocks.Genesis.OS from 4.6.3 to 4.7.0.
